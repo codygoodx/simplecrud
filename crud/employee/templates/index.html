@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+
+    <style>
+        body {
+            background: lightyellow;
+            display: table;
+            margin: auto;
+            height: 100%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        tr:hover {
+            background-color: lightgrey;
+        }
+
+        th {
+            background-color: lightblue;
+            color: black;
+        }
+
+        button {
+            border-width: 1px;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+        a {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="/emp">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Enter Details</h3>
+            </p>
+            <div>
+                <p>Employee Id:</p>{{ form.eid }}
+            </div>
+            <div>
+                <p>Employee Name::</p>{{ form.ename }}
+            </div>
+            <div>
+                <p>Employee Email:</p>{{ form.eemail }}
+            </div>
+            <div>
+                <p>Employee contact:</p>{{ form.econtact }}
+            </div>
+            <div>
+                <br>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
